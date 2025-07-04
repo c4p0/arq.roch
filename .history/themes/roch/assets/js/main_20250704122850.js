@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const navButtons = document.querySelectorAll('#navigation button');
     const sections = document.querySelectorAll('.content-section');
     const navigation = document.getElementById('navigation');
-    const logo = document.getElementById('logo'); // Añadido referencia al logo
+    
     
     // Crear contenedor para botones inferiores
     const buttonsBelowContainer = document.createElement('div');
@@ -24,35 +24,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const spaceNeeded = viewportHeight - 40 - lastButtonRect.bottom;
         return Math.max(0, spaceNeeded);
-    }
-
-    // Función para manejar la visibilidad del logo
-    function updateLogoVisibility(show) {
-        if (animationTimeline) animationTimeline.kill();
-        
-        animationTimeline = gsap.timeline();
-        
-        if (show) {
-            // Mostrar logo con animación
-            animationTimeline.to(logo, {
-                opacity: 1,
-                duration: 0.3,
-                ease: "none",
-                onStart: () => {
-                    logo.style.pointerEvents = 'all';
-                }
-            });
-        } else {
-            // Ocultar logo con animación
-            animationTimeline.to(logo, {
-                opacity: 0,
-                duration: 0.2,
-                ease: "none",
-                onComplete: () => {
-                    logo.style.pointerEvents = 'none';
-                }
-            });
-        }
     }
 
     // Mostrar sección activa
@@ -86,9 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Crear timeline de animación con movimiento lineal y rápido
         animationTimeline = gsap.timeline();
         
-        // Ocultar logo
-        updateLogoVisibility(false);
-        
         // Mover botones inferiores como un bloque sincronizado (LINEAL Y RÁPIDO)
         if (buttonIndex < navButtons.length - 1) {
             // Obtener botones inferiores
@@ -118,9 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (animationTimeline) animationTimeline.kill();
         
         animationTimeline = gsap.timeline();
-        
-        // Mostrar logo
-        updateLogoVisibility(true);
         
         // Resetear posición de todos los botones (LINEAL Y RÁPIDO)
         animationTimeline.to(navButtons, {
@@ -154,15 +119,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 showSection(sectionId);
             }
         });
-    });
-    
-    // Cerrar contenido al hacer click fuera
-    document.addEventListener('click', (e) => {
-        if (!e.target.closest('.content-section') && 
-            !e.target.closest('#navigation button') && 
-            activeSection) {
-            resetNavigation();
-        }
     });
     
     // Vista previa de proyectos

@@ -1,7 +1,7 @@
 [
     {
-        "title": "Teatro Diagonal",
-        "year": "2025",
+        "title": "Teatro de la Ciudad",
+        "year": "2023",
         "url": "https://studiokos.co/the-nursery/",
         "firstimg": "https://studiokos.co/wp-content/uploads/2023/10/03-2-1920x2862.jpg",
         "client": "Public Records",
@@ -12,7 +12,7 @@
     },
     {
         "title": "Banco Ciudad",
-        "year": "2024",
+        "year": "2022",
         "url": "https://studiokos.co/upstairs/",
         "firstimg": "https://studiokos.co/wp-content/uploads/2023/10/illgander-l1880627-1920x2880.jpg",
         "client": "Public Records",
@@ -23,8 +23,8 @@
     },
 
         {
-        "title": "El Tigre",
-        "year": "2024",
+        "title": "Teatro de la Ciudad",
+        "year": "2023",
         "url": "https://studiokos.co/the-nursery/",
         "firstimg": "https://studiokos.co/wp-content/uploads/2023/10/03-2-1920x2862.jpg",
         "client": "Public Records",
@@ -34,8 +34,8 @@
         "archive": false
     },
     {
-        "title": "Planetario",
-        "year": "2023",
+        "title": "Banco Ciudad",
+        "year": "2022",
         "url": "https://studiokos.co/upstairs/",
         "firstimg": "https://studiokos.co/wp-content/uploads/2023/10/illgander-l1880627-1920x2880.jpg",
         "client": "Public Records",
@@ -46,7 +46,7 @@
     },
 
         {
-        "title": "Country Nordelta",
+        "title": "Teatro de la Ciudad",
         "year": "2023",
         "url": "https://studiokos.co/the-nursery/",
         "firstimg": "https://studiokos.co/wp-content/uploads/2023/10/03-2-1920x2862.jpg",
@@ -57,7 +57,7 @@
         "archive": false
     },
     {
-        "title": "Galeria Santa Fe",
+        "title": "Banco Ciudad",
         "year": "2022",
         "url": "https://studiokos.co/upstairs/",
         "firstimg": "https://studiokos.co/wp-content/uploads/2023/10/illgander-l1880627-1920x2880.jpg",
@@ -70,7 +70,7 @@
    
     {
         "title": "95 Rivadavia",
-        "year": "2020",
+        "year": "2024",
         "archive": true
     }
 

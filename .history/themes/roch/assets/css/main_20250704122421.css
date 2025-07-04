@@ -189,6 +189,13 @@ a {
     transition: opacity 0.3s ease;
 }
 
+/* Estado normal del logo */
+#logo {
+    opacity: 1;
+    pointer-events: all;
+    transition: opacity 0.3s ease 0.1s; /* Retraso para que la transición sea visible */
+}
+
 
 /* Clases para desplazamiento */
 .button-container {

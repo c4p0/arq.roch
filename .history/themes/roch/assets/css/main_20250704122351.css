@@ -159,9 +159,6 @@ a {
     transform: translate(-50%, -50%);
     z-index: 1000;
     text-align: center;
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity 0.3s ease 0.1s; /* Retraso para que la transición sea visible */
 }
 
 #logo img {
@@ -182,12 +179,7 @@ a {
     display: block;
 }
 
-/* Estado del logo cuando hay contenido activo */
-.content-section.active ~ #logo {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
+
 
 
 /* Clases para desplazamiento */

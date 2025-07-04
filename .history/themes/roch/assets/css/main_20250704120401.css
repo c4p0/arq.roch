@@ -25,7 +25,7 @@ body {
 
 a {
     color: rgb(109, 111, 109);
-    
+    text-decoration: none;
 }
 /* Contenedor principal */
 #app {
@@ -151,7 +151,7 @@ a {
     display: block;
 }
 
-/* Logo  */
+/* Logo - CENTRADO Y MÁS GRANDE */
 #logo {
     position: fixed;
     top: 50%;
@@ -159,9 +159,6 @@ a {
     transform: translate(-50%, -50%);
     z-index: 1000;
     text-align: center;
-    opacity: 1;
-    pointer-events: all;
-    transition: opacity 0.3s ease 0.1s; /* Retraso para que la transición sea visible */
 }
 
 #logo img {
@@ -181,14 +178,6 @@ a {
 #logo:hover img.hover {
     display: block;
 }
-
-/* Estado del logo cuando hay contenido activo */
-.content-section.active ~ #logo {
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-}
-
 
 /* Clases para desplazamiento */
 .button-container {

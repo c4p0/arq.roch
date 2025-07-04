@@ -1,0 +1,221 @@
+/* Reset completo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Botón home - SOLO SI ES NECESARIO */
+header {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 1000;
+}
+
+#home {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#home img {
+    display: block;
+    height: 20px;
+}
+
+#home img.hover {
+    display: none;
+}
+
+#home:hover img.normal {
+    display: none;
+}
+
+#home:hover img.hover {
+    display: block;
+}
+
+/* Navegación principal */
+#navigation {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* SIN espacio entre elementos */
+}
+
+#navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0; /* SIN márgenes */
+    text-align: left;
+    position: relative;
+    transition: all 0.3s ease;
+    color: inherit;
+    pointer-events: all;
+    height: 20px; /* Altura fija */
+    overflow: visible;
+    display: block;
+}
+
+/* Estado activo y hover */
+#navigation button.active,
+#navigation button:hover {
+    font-weight: 700;
+}
+
+/* Contenedor de secciones */
+.sections-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 900;
+    width: 100%;
+    padding-left: 200px; /* Espacio para el menú */
+    padding-top: 100px; /* Espacio superior */
+}
+
+/* Secciones de contenido */
+.content-section {
+    display: none;
+    max-width: 600px;
+    animation: fadeIn 0.4s ease forwards;
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+
+.content-section.active {
+    display: block;
+    position: relative;
+    top: auto;
+    left: auto;
+    margin-top: 30px; /* Espacio después del botón */
+    margin-left: 0;
+}
+
+/* Vista previa de proyectos */
+#project_preview {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    display: none;
+    z-index: 900;
+}
+
+#project_preview_info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#project_preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Logo */
+#logo {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 1000;
+}
+
+#logo img {
+    height: 40px;
+    display: block;
+}
+
+#logo img.hover {
+    display: none;
+}
+
+#logo:hover img.normal {
+    display: none;
+}
+
+#logo:hover img.hover {
+    display: block;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes moveUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(var(--offset) * -35px)); }
+}
+
+@keyframes moveDown {
+    from { transform: translateY(0); }
+    to { transform: translateY(calc(var(--offset) * 35px)); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header, #navigation, .sections-container, #logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 20px;
+        padding: 0;
+    }
+    
+    .sections-container {
+        padding-left: 0;
+        padding-top: 0;
+    }
+    
+    #navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+        justify-content: center;
+        transform: none;
+        top: auto;
+    }
+    
+    .content-section {
+        position: relative;
+        margin-top: 20px;
+    }
+    
+    #project_preview {
+        display: none !important;
+    }
+}

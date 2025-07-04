@@ -1,0 +1,227 @@
+/* Reset completo */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor principal */
+#app {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+/* Botón home */
+#home {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+#home img {
+    display: block;
+    height: 20px;
+}
+
+#home img.hover {
+    display: none;
+}
+
+#home:hover img.normal {
+    display: none;
+}
+
+#home:hover img.hover {
+    display: block;
+}
+
+/* Navegación principal */
+#navigation {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Añade esto para igualar el espacio */
+}
+
+#navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    position: relative;
+    transition: all 0.3s ease;
+    color: inherit;
+    pointer-events: all;
+    height: 20px;
+    overflow: visible;
+    display: block;
+}
+
+/* Estado activo y hover */
+#navigation button.active,
+#navigation button:hover {
+    font-weight: 700;
+}
+
+/* Contenedor de secciones */
+.sections-container {
+    position: absolute;
+    top: 0;
+    left: 40px;
+    z-index: 900;
+    margin-top: 0;
+}
+
+/* Secciones de contenido - ALINEACIÓN CORREGIDA */
+.content-section {
+    display: none;
+    width: 50vw;
+    max-width: 600px;
+    position: absolute;
+    pointer-events: none;
+    word-wrap: break-word;
+    left: 0;
+    top: 0;
+    /* El top y left serán ajustados por JS */
+    margin-top: 0;
+    padding-top: 0;
+    transform: none;
+}
+
+.content-section.active {
+    display: block;
+    pointer-events: all;
+    /* El top y left serán ajustados por JS */
+}
+
+/* Vista previa de proyectos */
+#project_preview {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    display: none;
+    z-index: 900;
+}
+
+#project_preview_info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#project_preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Logo - CENTRADO Y MÁS GRANDE */
+#logo {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+}
+
+#logo img {
+    height: 200px; /* Tamaño aumentado */
+    display: block;
+    margin: 0 auto;
+}
+
+#logo img.hover {
+    display: none;
+}
+
+#logo:hover img.normal {
+    display: none;
+}
+
+#logo:hover img.hover {
+    display: block;
+}
+
+/* Animaciones para desplazamiento de botones */
+@keyframes moveBlockDown {
+    from { transform: translateY(0); }
+    to { transform: translateY(var(--move-distance)); }
+}
+
+/* Clase para el bloque de botones inferiores */
+.button-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em; /* Mantiene separación entre botones */
+    will-change: transform;
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #app {
+        padding: 20px;
+    }
+    
+    #home, #navigation, .sections-container, #logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 10px 0;
+    }
+
+    #logo {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 40px auto;
+    }
+    
+    #logo img {
+        height: 100px;
+    }
+    
+    #project_preview {
+        display: none !important;
+    }
+
+    .content-section {
+        width: 100%; /* En móvil ocupa todo el ancho */
+    }
+}

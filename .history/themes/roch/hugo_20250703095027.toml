@@ -1,0 +1,6 @@
+# config.toml
+theme = "roch"
+baseURL = "https://tusitio.com"
+
+[params]
+description = "is the design + development studio of Des Boneva and Shane Davis..."

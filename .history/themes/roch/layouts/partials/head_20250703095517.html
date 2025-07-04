@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}">
+
+<title>{{ .Site.Title }}</title>
+<meta name="description" content="{{ .Site.Params.description }}" />
+
+<style>
+    :root {
+        --black: #000000;
+        --white: #ffffff;
+        --transition: all 0.3s ease;
+    }
+    
+    body {
+        margin: 0;
+        font-family: helvetica, sans-serif;
+        color: var(--black);
+        overflow-x: hidden;
+    }
+    
+    .system-message, .popup-container, .progressbar {
+        display: none !important;
+    }
+</style>
+
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.Permalink }}">

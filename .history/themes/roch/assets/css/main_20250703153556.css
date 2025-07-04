@@ -1,0 +1,28 @@
+#navigation {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+#navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    position: relative;
+    transition: all 0.3s ease;
+    color: inherit;
+}
+
+#navigation button.active,
+#navigation button:hover {
+    font-weight: bold;
+    color: #0070f3;
+}

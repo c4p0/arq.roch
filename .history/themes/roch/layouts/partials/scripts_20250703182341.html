@@ -1,0 +1,14 @@
+{{ $js := resources.Get "js/main.js" }}
+{{ if $js }}
+    {{ $js = $js | minify | fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}" defer></script>
+{{ end }}
+
+<!-- Asegurar que GSAP esté disponible antes de nuestro script -->
+<script>
+    // Verificar si GSAP ya está cargado
+    if (typeof gsap === 'undefined') {
+        document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"><\/script>');
+    }
+</script>
+<script src="{{ "js/main.js" | absURL }}"></script>

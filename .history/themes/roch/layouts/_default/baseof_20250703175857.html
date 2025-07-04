@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="home fixed-header fixed-footer">
+    <div id="app">
+        <!-- Menú de navegación completo -->
+        <div id="navigation">
+            <button data-href="studiokos">studioKOS</button>
+            <button data-href="projects">projects</button>
+            <button data-href="press">press</button>
+            <button data-href="team">team</button>
+            <button data-href="contact">contact</button>
+        </div>
+        
+        <!-- Contenedor de secciones -->
+        <div class="sections-container">
+            <!-- ... section content remains the same ... -->
+        </div>
+        
+        <!-- Vista previa de proyectos -->
+        <div id="project_preview">
+            <!-- ... preview content ... -->
+        </div>
+        
+        <!-- Logo -->
+        <div id="logo">
+            <!-- ... logo content ... -->
+        </div>
+    </div>
+    
+    {{ partial "scripts.html" . }}
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="home fixed-header fixed-footer">
+    <div id="app">
+        <!-- Menú de navegación principal -->
+        <div id="navigation">
+            <button data-href="studiokos">studioKOS</button>
+            <button data-href="projects">Projects</button>
+            <button data-href="press">Press</button>
+            <button data-href="team">Team</button>
+        </div>
+        <!-- Contenedor de secciones -->
+        <div class="sections-container">
+        </div>
+        <!-- Vista previa de proyectos -->
+        <div id="project_preview"></div>
+        <!-- Logo -->
+        <div id="logo"></div>
+    </div>
+    {{ partial "scripts.html" . }}
+</body>
+</html>

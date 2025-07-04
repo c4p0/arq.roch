@@ -1,0 +1,7 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Stu'
+name = "Roch"
+version = "0.1.0"
+license = "MIT"
+description = "Tema para sitio tipo studiokos.co"

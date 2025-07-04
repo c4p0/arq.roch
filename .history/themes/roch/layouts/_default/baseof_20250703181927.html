@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+    <!-- Añadir Roboto Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- GSAP para animaciones avanzadas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="home fixed-header fixed-footer">
+    <div id="app">
+        <!-- Menú de navegación completo -->
+        <div id="navigation">
+            <button data-href="studiokos">studioKOS</button>
+            <button data-href="projects">projects</button>
+            <button data-href="press">press</button>
+            <button data-href="team">team</button>
+            <button data-href="contact">contact</button>
+        </div>
+        
+        <!-- Contenedor de secciones -->
+        <div class="sections-container">
+            <article id="studiokos" class="content-section">
+                <p>is the design + development studio of Des Boneva and Shane Davis. We provide creative direction and design services to clients and partners that possess social, cultural, and/or ecological ambition within the built environment. Our design approach is informed by human behavior and experience over style or trend. We strive to embed meaning in all gestures to achieve outcomes that are deeply intentioned and distinctive.</p>
+            </article>
+            
+            <article id="projects" class="content-section">
+                {{ range where .Site.Data.projects "archive" false }}
+                    <a class="project" href="{{ .url }}" 
+                        data-firstimg="{{ .firstimg }}"
+                        data-client="{{ .client }}"
+                        data-status="{{ .status }}"
+                        data-cats="{{ .cats }}"
+                        data-tags="{{ .tags }}">
+                        <span class="year">{{ .year }}&nbsp;&nbsp;</span>
+                        <span class="title">{{ .title }}</span>
+                    </a><br>
+                {{ end }}
+                
+                {{ range where .Site.Data.projects "archive" true }}
+                    <div class="project-archive">
+                        <span class="year">{{ .year }}&nbsp;&nbsp;</span>
+                        <span class="title">{{ .title }}</span>
+                    </div><br>
+                {{ end }}
+            </article>
+            
+            <article id="press" class="content-section">
+                <!-- Contenido de prensa -->
+            </article>
+            
+            <article id="team" class="content-section">
+                <!-- Contenido de equipo -->
+            </article>
+            
+            <article id="contact" class="content-section">
+                <!-- Contenido de contacto -->
+            </article>
+        </div>
+        
+        <!-- Vista previa de proyectos -->
+        <div id="project_preview">
+            <div id="project_preview_info">
+                <span>Client:</span><span class="client"></span>
+                <span>Typology:</span><span class="categories"></span>
+                <span>Services:</span><span class="tags"></span>
+                <span>Status:</span><span class="status"></span>
+            </div>
+            <img class="featured-img">      
+            <img class="first-img">      
+        </div>
+        
+        <!-- Logo -->
+        <div id="logo">
+            <img class="normal" alt="Studio Logo" src="{{ "img/sk-Logo-6-.svg" | absURL }}">
+            <img class="hover" alt="Studio Logo Outlines" src="{{ "img/sk-Logo-6-outline.svg" | absURL }}">
+        </div>
+    </div>
+    
+    {{ partial "scripts.html" . }}
+</body>
+</html>

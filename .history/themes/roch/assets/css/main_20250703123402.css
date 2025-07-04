@@ -1,0 +1,128 @@
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tipografía */
+body {
+    font-family: 'Space Mono', monospace;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+    color: #000;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+/* Navegación */
+#navigation {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+}
+
+#navigation button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font: inherit;
+    padding: 0;
+    margin: 0 0 10px; /* Espaciado reducido */
+    text-align: left;
+    position: relative;
+    transition: all 0.3s ease;
+    color: inherit;
+    pointer-events: all;
+}
+
+/* Estado activo y hover */
+#navigation button.active,
+#navigation button:hover {
+    font-weight: 700;
+}
+
+/* Contenedor de secciones */
+.sections-container {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(calc(-50% + 20px)); /* Ajuste vertical */
+    z-index: 900;
+    margin-top: 0;
+    padding-left: 0; /* Alineación con el botón */
+}
+
+/* Secciones de contenido */
+.content-section {
+    display: none;
+    max-width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeIn 0.4s ease forwards;
+    pointer-events: none;
+    margin-top: 0;
+}
+
+.content-section.active {
+    display: block;
+    pointer-events: all;
+    position: relative;
+    top: auto;
+    left: auto;
+}
+
+/* Botón home - ocultar si no es necesario */
+header {
+    position: fixed;
+    top: 40px;
+    left: 40px;
+    z-index: 1000;
+}
+
+/* Logo */
+#logo {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    z-index: 1000;
+}
+
+/* Vista previa de proyectos */
+#project_preview {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    display: none;
+    z-index: 900;
+}
+
+/* Animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    #navigation, .sections-container, #logo, header {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin: 20px;
+    }
+    
+    #project_preview {
+        display: none !important;
+    }
+}

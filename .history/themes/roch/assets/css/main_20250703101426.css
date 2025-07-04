@@ -1,0 +1,158 @@
+/* Estilos generales */
+#content {
+    padding: 80px 5% 120px;
+}
+
+.content-section {
+    display: none;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1000;
+    background: white;
+}
+
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 0;
+    position: relative;
+}
+
+#home img.hover,
+#logo img.hover {
+    display: none;
+    position: absolute;
+    left: 0;
+}
+
+#home:hover img.normal,
+#logo:hover img.normal {
+    opacity: 0;
+}
+
+#home:hover img.hover,
+#logo:hover img.hover {
+    display: block;
+}
+
+#logo {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+/* Vista previa de proyectos */
+#project_preview {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    display: none;
+    z-index: 900;
+}
+
+#project_preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    button {
+        margin: 0 10px 10px;
+    }
+    
+    #project_preview {
+        display: none !important;
+    }
+}
+
+/* Vista previa de proyectos */
+#project_preview {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    display: none;
+    z-index: 900;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+#project_preview_info {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.info-row {
+    display: contents;
+}
+
+.label {
+    font-weight: 600;
+    text-align: right;
+}
+
+.value {
+    color: #555;
+}
+
+#project_preview img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.first-img {
+    opacity: 1;
+}
+
+.featured-img {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Efecto hover para cambio de imagen */
+#project_preview:hover .first-img {
+    opacity: 0;
+}
+
+#project_preview:hover .featured-img {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    #project_preview {
+        display: none !important;
+    }
+}

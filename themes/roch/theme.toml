@@ -1,0 +1,5 @@
+name = "Roch"
+version = "0.1.0"
+license = "MIT"
+description = "Tema para sitio tipo studiokos.co"
+min_version = "0.145.0"  # Especifica tu versión de Hugo

@@ -1,0 +1,8 @@
+baseURL = 'https:///'
+languageCode = 'en-us'
+title = 'Studio Roch'
+theme = 'roch'
+name = "Roch"
+version = "0.1.0"
+license = "MIT"
+description = "website studio-roch"

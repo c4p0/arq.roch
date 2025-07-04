@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html class="no-js" lang="{{ .Site.LanguageCode }}">
+<head>
+    {{ partial "head.html" . }}
+</head>
+<body class="home fixed-header fixed-footer">
+    {{ partial "header.html" . }}
+    
+    <div id="content" class="main-content">
+        <main id="main">
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
+    
+    {{ partial "project-preview.html" . }}
+    {{ partial "scripts.html" . }} <!-- Nuevo partial para JS -->
+</body>
+</html>

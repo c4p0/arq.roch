@@ -1,0 +1,45 @@
+<header>
+    <button id="home">
+        <img class="normal" src="{{ "img/home.svg" | absURL }}">
+        <img class="hover" src="{{ "img/home_hover.svg" | absURL }}">
+    </button>
+    
+    <button data-href="studiokos">studioKOS</button>
+    <button data-href="projects">Projects</button>
+    <button data-href="press">Press</button>
+    <button data-href="team">Team</button>
+    <button data-href="contact">Contact</button>
+    
+    <div id="logo">
+        <img class="normal" alt="Studio KOS Logo" src="{{ "img/sk-Logo-6-.svg" | absURL }}">
+        <img class="hover" alt="Studio KOS Logo Outlines" src="{{ "img/sk-Logo-6-outline.svg" | absURL }}">
+    </div>
+</header>
+
+<!-- Contenido de las secciones -->
+<article id="studiokos" class="content-section">
+    <p>is the design + development studio of Des Boneva and Shane Davis. We provide creative direction and design services to clients and partners that possess social, cultural, and/or ecological ambition within the built environment. Our design approach is informed by human behavior and experience over style or trend. We strive to embed meaning in all gestures to achieve outcomes that are deeply intentioned and distinctive.</p>
+</article>
+
+<article id="projects" class="content-section">
+    {{ range where .Site.Data.projects "archive" false }}
+        <a class="project" href="{{ .url }}" 
+            data-firstimg="{{ .firstimg }}"
+            data-client="{{ .client }}"
+            data-status="{{ .status }}"
+            data-cats="{{ .cats }}"
+            data-tags="{{ .tags }}">
+            <span class="year">{{ .year }}&nbsp;&nbsp;</span>
+            <span class="title">{{ .title }}</span>
+        </a><br>
+    {{ end }}
+    
+    {{ range where .Site.Data.projects "archive" true }}
+        <div class="project-archive">
+            <span class="year">{{ .year }}&nbsp;&nbsp;</span>
+            <span class="title">{{ .title }}</span>
+        </div><br>
+    {{ end }}
+</article>
+
+<!-- Similar para press, team y contact -->

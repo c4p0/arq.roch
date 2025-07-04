@@ -1,0 +1,143 @@
+/* Estructura principal */
+body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header solo con botón home */
+header {
+    grid-column: 1;
+    grid-row: 1;
+    padding: 20px;
+}
+
+/* Navegación vertical */
+#navigation {
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    z-index: 1000;
+    line-height: 20px !important;
+}
+
+#navigation button {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: -0.2px;
+    line-height: 20px;
+    padding: 0;
+    margin: 0 0 15px; /* Reducción significativa del espacio */
+    text-align: left;
+    position: relative;
+    transition: var(--transition);
+    color: var(--black);
+    pointer-events: all;
+}
+
+/* Estado activo y hover */
+#navigation button.active,
+#navigation button:hover {
+    font-weight: 700;
+}
+
+/* Contenido principal */
+#content {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    padding: 40px 5%;
+    position: relative;
+}
+
+/* Logo */
+#logo {
+    grid-column: 1;
+    grid-row: 3;
+    padding: 20px;
+    position: relative;
+}
+
+/* Vista previa de proyectos */
+#project_preview {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35%;
+    display: none;
+    z-index: 900;
+}
+
+/* Secciones de contenido */
+.content-section {
+    display: none;
+    max-width: 600px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: fadeIn 0.4s ease forwards;
+    pointer-events: none;
+}
+
+.content-section.active {
+    display: block;
+    pointer-events: all;
+    margin-top: 35px; /* Posición justo debajo del botón seleccionado */
+}
+
+/* Proyectos */
+#projects .project {
+    display: block;
+    text-decoration: none;
+    color: var(--black);
+    margin-bottom: 10px;
+}
+
+#projects .year {
+    font-weight: 400;
+}
+
+#projects .title {
+    font-weight: 700;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+    
+    header, #navigation, #content, #logo {
+        grid-column: 1;
+    }
+    
+    #navigation {
+        flex-direction: row;
+        flex-wrap: wrap;
+        grid-row: 2;
+        gap: 10px;
+    }
+    
+    #content {
+        grid-row: 3;
+        padding: 20px;
+    }
+    
+    #logo {
+        grid-row: 4;
+    }
+    
+    #project_preview {
+        display: none !important;
+    }
+}
